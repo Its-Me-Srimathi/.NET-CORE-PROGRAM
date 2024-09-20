@@ -1,0 +1,37 @@
+double BillAmount;
+double Discount1;
+double Discount2;
+double Discount3;
+int choice;
+
+Console.WriteLine("COFFEE SHOP MEMBERSHIP");
+Console.WriteLine("Enter your Bill Amount : rs.");
+BillAmount =Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Please Select your valid membership : ");
+Console.WriteLine("1. Gold Member");
+Console.WriteLine("2. Silver Member");
+Console.WriteLine("3. Bronze Member");
+Console.WriteLine("Enter Your Choice : ");
+choice = Convert.ToInt32(Console.ReadLine());
+
+switch(choice)
+{
+    case 1:
+        if (BillAmount > 50)
+        {
+            Discount1 = BillAmount - BillAmount*20/100;
+            Console.WriteLine("The Discount is 20%\nThe Total Amount is : "+Discount1);
+        }
+        break;
+    case 2:
+        if (BillAmount > 30 && BillAmount<50)
+        {
+            Discount2 = BillAmount - BillAmount*10/100;
+            Console.WriteLine("The Discount is 10%\nThe Total Amount is : " + Discount2);
+        }
+        break;
+    case 3:
+            Discount3 = BillAmount*5 / 100;
+            Console.WriteLine("The Discount is 10%\nThe Total Amount is : " + Discount3);
+        break;
+}
