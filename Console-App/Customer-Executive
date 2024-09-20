@@ -1,0 +1,21 @@
+int Language;
+
+Console.WriteLine("WELCOME TO CUSTOMER CARE\nPlease Select Your Language : ");
+Console.WriteLine("1. Kannada\n2. English\n3. Hindi");
+Language = Convert.ToInt32(Console.ReadLine());
+
+switch (Language)
+{
+    case 1:
+        Console.WriteLine("Your Selected Language : Kannada");
+        Console.WriteLine("Customer Executive Name : Ramu");
+        break;
+    case 2:
+        Console.WriteLine("Your Selected Language : English");
+        Console.WriteLine("Customer Executive Name : Somu"); 
+        break;
+    case 3:
+        Console.WriteLine("Your Selected Language : Hindi");
+        Console.WriteLine("Customer Executive Name : Seenu"); 
+        break;
+}
