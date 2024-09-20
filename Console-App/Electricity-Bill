@@ -1,0 +1,79 @@
+using System.Threading.Channels;
+
+string UserName;
+string UserId;
+double ConsumedUnit;
+int choice;
+double bill1;
+double bill2;
+
+Console.WriteLine("Enter Your Name: ");
+UserName = Console.ReadLine();
+
+Console.WriteLine("Enter Your Id: ");
+UserId = Console.ReadLine();
+
+Console.WriteLine("Enter the units consumed: ");
+ConsumedUnit = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("If you're a Residential User, Select Choice : 1 \nIf you're a Commercial User, Select Choice : 2");
+
+Console.WriteLine("Enter Your Choice: ");
+choice = Convert.ToInt32(Console.ReadLine());
+
+switch (choice)
+{
+    case 1:
+        Console.WriteLine("Residential User");
+        if(ConsumedUnit> 1 &&  ConsumedUnit<= 50)
+        {
+            Console.WriteLine("Bill Amount : 0");
+        }
+        else if(ConsumedUnit>50 && ConsumedUnit <= 150)
+        {
+            bill1 = (ConsumedUnit - 50) * 5.5;
+            Console.WriteLine("Bill Amount : rs."+bill1);
+        }
+        else if (ConsumedUnit > 150 && ConsumedUnit <= 250)
+        {
+            bill1 = (ConsumedUnit - 50) * 8.5;
+            Console.WriteLine("Bill Amount : rs." + bill1);
+        }
+        else if (ConsumedUnit > 250 && ConsumedUnit <= 500)
+        {
+            bill1 = (ConsumedUnit - 50) * 13;
+            Console.WriteLine("Bill Amount : rs." + bill1);
+        }
+        else if (ConsumedUnit > 500)
+        {
+            Console.WriteLine("You're not a residential user.");
+        }
+        break;
+    case 2:
+        Console.WriteLine("Commercial User");
+        if (ConsumedUnit > 1 && ConsumedUnit <= 50)
+        {
+            Console.WriteLine("Bill Amount : 0");
+        }
+        else if (ConsumedUnit > 50 && ConsumedUnit <= 150)
+        {
+            bill2 = (ConsumedUnit - 50) * 15.5;
+            Console.WriteLine("Bill Amount : rs." + bill2);
+        }
+        else if (ConsumedUnit > 150 && ConsumedUnit <= 250)
+        {
+            bill2 = (ConsumedUnit - 50) * 18.5;
+            Console.WriteLine("Bill Amount : rs." + bill2);
+        }
+        else if (ConsumedUnit > 250 && ConsumedUnit <= 500)
+        {
+            bill2 = (ConsumedUnit - 50) * 23;
+            Console.WriteLine("Bill Amount : rs." + bill2);
+        }
+        break;
+    default:
+        Console.WriteLine("Select Correct choice");
+        break;
+}
+
+
